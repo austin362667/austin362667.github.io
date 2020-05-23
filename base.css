@@ -9,6 +9,7 @@ body {
     margin-bottom: 150px;
     margin-right: 100px;
     margin-left: 100px;
+    font-size: 3vw;
 }
 
 ul {
@@ -204,22 +205,7 @@ li a:hover {
   background-color: black;
 }
 
-q {font-style: italic;font-size:3vw;}
+q {font-style: italic;}
 
 .author {color: cornflowerblue;}
 
-p {
-font-size:3vw;
-}
-
-h1 {
-font-size:3vw;
-}
-
-h2 {
-font-size:3vw;
-}
-
-h5 {
-font-size:3vw;
-}
