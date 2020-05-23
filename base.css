@@ -204,23 +204,22 @@ li a:hover {
   background-color: black;
 }
 
-q {font-style: italic;}
+q {font-style: italic;font-size:3vw;}
 
 .author {color: cornflowerblue;}
-.font-size:10vw;
 
 p {
-.font-size:10vw;
+font-size:3vw;
 }
 
 h1 {
-.font-size:10vw;
+font-size:3vw;
 }
 
 h2 {
-.font-size:10vw;
+font-size:3vw;
 }
 
 h5 {
-.font-size:10vw;
+font-size:3vw;
 }
