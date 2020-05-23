@@ -47,6 +47,7 @@ li a:hover {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  z-index: 4;
 }
 
 .icon-bar a {
@@ -56,6 +57,7 @@ li a:hover {
   transition: all 0.3s ease;
   color: white;
   font-size: 20px;
+
 }
 
 .icon-bar a:hover {
@@ -159,7 +161,7 @@ li a:hover {
 .slideshow-container {
   position: relative;
   background: black;
-  max-width: 100%;
+  max-width: 100%;  
 }
 
 .mySlides {
