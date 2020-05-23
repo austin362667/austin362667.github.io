@@ -4,11 +4,10 @@ body {
     background: rgb(19, 19, 19);
     color: #fff;
     font-family: 'Open Sans', sans-serif;
-    font-size: 28px;
-    margin-top: 30px;
-    margin-bottom: 150px;
-    margin-right: 100px;
-    margin-left: 100px;
+    margin-top: 1vw;
+    margin-bottom: 5vw;
+    margin-right: 5vw;
+    margin-left: 5vw;
     font-size: 3vw;
 }
 
@@ -145,6 +144,12 @@ li a:hover {
 }
 
 /* Slideshow container */
+
+@media screen and (max-width: 800px) {
+  .slideshow-container, .mySlides, .card, .container {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
 .slideshow-container {
   position: relative;
   background: black;
