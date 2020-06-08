@@ -89,6 +89,25 @@ li a:hover {
   color: white;
 }
 
+  
+.photo-grid {
+  display: grid;
+  gap: 1rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-auto-rows: 240px;
+}
+
+@media screen and (min-width: 600px) {
+  .card-tall {
+    grid-row: span 2 / auto;
+  }
+
+  .card-wide {
+    grid-column: span 2 / auto;
+  }
+}
+
 
 
 
@@ -151,12 +170,10 @@ li a:hover {
   opacity: 1;
 }
 
-/* Slideshow container */
 
 @media screen and (max-width: 800px) {
   .slideshow-container, .mySlides, .card, .container {
-    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
-  }
+    width: 100%; 
 }
 .slideshow-container {
   position: relative;
