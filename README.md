@@ -7,13 +7,13 @@ HTML CSS JavaScript
 ```
 JavaScrript "Slide Show" inspired by [W3School](https://www.w3schools.com/howto/howto_js_slideshow.asp)
 ----
-All Photo on [Unsplash](https://unsplash.com/license)
+All Photos on [Unsplash](https://unsplash.com/license)
 ----
 
 智財權聲明
 ====
 ```
-本網站除程式碼以外之資料，包括但不限於多媒體(圖片、影片等)均取得合法使用授權，包括商業及非商業用途。<br>若有疏漏造成原作者的困擾，煩請通知本站作者以盡速下架或處理。
+本網站除程式碼以外之資料，包括但不限於多媒體(圖片、影片等)均取得合法使用授權，包含商業及非商業用途。<br>若有疏漏造成原作者之困擾，煩請通知本站作者以盡速下架或處理。
 ```
 
 免責聲明
