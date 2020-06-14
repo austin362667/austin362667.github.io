@@ -171,7 +171,6 @@ li a:hover {
 }
 
 
-@media screen and (max-width: 800px) {
   .slideshow-container, .mySlides, .card, .container {
     width: 100%; 
 }
