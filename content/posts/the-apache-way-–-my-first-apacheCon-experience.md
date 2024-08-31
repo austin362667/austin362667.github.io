@@ -8,7 +8,7 @@ draft: false
 
 My journey into the world of open source began with a leap of faith, a ticket to my first ApacheCon, and a heart filled with excitement and curiosity. As I stepped into the vibrant conference hall, I was immediately struck by the energy and passion radiating from every corner. The Apache Way was more than just a philosophy; it was a living, breathing community of dedicated individuals united by a common belief in the power of collaboration and innovation.
 
-Over the next few days, I immersed myself in a whirlwind of keynotes, sessions, and workshops. The speakers were luminaries in their respective fields, sharing insights, experiences, and lessons learned from years of contributing to Apache projects. I was amazed by the diversity of projects, from the widely-usedApache Kafka to cutting-edge initiatives like Apache Fury and Apache Gravitino.
+Over the next few days, I immersed myself in a whirlwind of keynotes, sessions, and workshops. The speakers were luminaries in their respective fields, sharing insights, experiences, and lessons learned from years of contributing to Apache projects. I was amazed by the diversity of projects, from the widely-used Apache Kafka to cutting-edge initiatives like Apache Fury and Apache Gravitino.
 
 One of the most inspiring aspects of ApacheCon was the sense of community. Attendees from all walks of life and backgrounds came together to share their knowledge, collaborate on ideas, and build meaningful connections. The Apache Way emphasized the importance of inclusivity, transparency, and consensus-driven decision-making. I witnessed firsthand how this collaborative approach fostered a culture of innovation and excellence.
 
