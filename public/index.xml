@@ -6,14 +6,14 @@
     <description>Recent content on </description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 30 Jul 2024 16:33:12 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 Aug 2024 16:33:12 +0800</lastBuildDate>
     <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>The Apache Way – My First ApacheCon Experience</title>
-      <link>//localhost:1313/posts/the-apache-way--my-first-apachecon-experience/</link>
-      <pubDate>Tue, 30 Jul 2024 16:33:12 +0800</pubDate>
-      <guid>//localhost:1313/posts/the-apache-way--my-first-apachecon-experience/</guid>
-      <description>Apache CommunityOverCode Asia&#xA;My journey into the world of open source began with a leap of faith, a ticket to my first ApacheCon, and a heart filled with excitement and curiosity. As I stepped into the vibrant conference hall, I was immediately struck by the energy and passion radiating from every corner. The Apache Way was more than just a philosophy; it was a living, breathing community of dedicated individuals united by a common belief in the power of collaboration and innovation.</description>
+      <title>Lighter and Faster: Incorporate Rust into Python</title>
+      <link>//localhost:1313/posts/rbir/</link>
+      <pubDate>Fri, 30 Aug 2024 16:33:12 +0800</pubDate>
+      <guid>//localhost:1313/posts/rbir/</guid>
+      <description>#python #rust #gprc #protobuf #pyo3&#xA;The Great Language Conundrum: Why Bother with a New One? Learning a new programming language is a monumental task that requires a serious commitment of time, effort, and dedication. For many of us, Python has become the go-to language for its simplicity, flexibility, and dominance in the realms of machine learning and artificial intelligence. It&amp;rsquo;s the perfect &amp;ldquo;glue&amp;rdquo; that holds our projects together, freeing us from distractions and allowing us to focus on the core business logic.</description>
     </item>
   </channel>
 </rss>
