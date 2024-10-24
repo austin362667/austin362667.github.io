@@ -6,7 +6,7 @@ title = "Li-Hsing Liu / Austin"
   url = "https://github.com/austin362667"
 
 [[entries]]
-title = "My Friends' Blogs"
+title = "Friends' Blogs"
 
   [[entries.entries]]
   title = "What is the Postgres' SQL GAME plan (I)? (Chinese)"
@@ -17,7 +17,7 @@ title = "My Friends' Blogs"
   url = "https://chishengliu.com/zh-tw/posts/apache-communityovercode-asia-2024-coauthored/"
 
 [[entries]]
-title = "Some Good Reads"
+title = "Good Reads"
 
   [[entries.entries]]
   title = "Hacker's guide to Neural Networks (English)"
@@ -29,7 +29,7 @@ title = "Some Good Reads"
 
 
 [[entries]]
-title = "All Pposts"
+title = "My Posts"
   [entries.post_list]
   limit = 5
   show_more = true
