@@ -8,7 +8,7 @@ draft: false
 
 ## Introduction to Flyte & Flytekit
 
-Flyte is a scalable and flexible cloud native workflow orchestration platform designed to seamlessly schedule and execute machine learning or data analytics tasks remotely. Its core is written in Golang and runs on Kubernetes via an operator called Flyte Propeller. For local development, users typically write tasks in Python using Flytekit (the Python SDK) and register them with the control plane through gRPC communication.
+`Flyte` is a scalable and flexible cloud native workflow orchestration platform designed to seamlessly schedule and execute machine learning or data analytics tasks remotely. Its core is written in Golang and runs on Kubernetes via an operator called Flyte Propeller. For local development, users typically write tasks in Python using `Flytekit` (the Flyte Python SDK) and register them with the control plane through gRPC communication.
 
 ## Our Problem with `grpcio`
 
@@ -23,12 +23,17 @@ In order to eliminate the gRPC Python dependency from flytekit, our goal is to d
 Since optimized Python packages are not our main goal. Compiled extension modules in Python enhance execution speed. But, where do Python's performance constraints come from? First, it's an interpreted language. Second, it accepts dynamic typing. Third, it has a Global Interpreter Lock (GIL), meaning only one Python thread can run on a single machine core within its interpreter state.
 
 In order to address the objectives of improving Python's performance constraints and removing Python's gRPC dependency, other existing solutions include the following:
+
 From the performance perspective,
+
 1. PyPy (JIT optimization)
 2. Cython, Mypyc (Compiled “Python”)
 3. C / C++ Extension Modules
+
 From the dependencies perspective,
+
 1. C / C++ Extension Modules
+
 In comparison, our Rust approach is more like a wrapper of “C / C++ Extension Modules” on the two extremes of the spectrum.
 
 Choose Rust instead of tiresome C / C++, Generally speaking, the PyO3 API approach is a much more exclusive experience that builds to work for Python. Creating low-level C FFI binding with the C API is common and more general to expose functions to other languages than Python like Javascript, Ruby or something else but requires careful management of memory and reference counts, which can be difficult for non-trivial programs.
@@ -43,28 +48,33 @@ Learning a new programming language is a monumental task that requires a serious
 
 ## But Then There's Rust...
 
-Rust, on the other hand, is a systems programming language that's been gaining traction in recent years. It's a powerhouse of a language that's designed to build fast, reliable, and portable software. With its modern architecture and sleek syntax, Rust is perfect for crafting command-line tools, systems software, and other high-performance applications. But for those of us who dwell in the realms of machine learning and data pipelines, Rust may seem like a distant cousin - intriguing, yet unfamiliar. So, the question remains: what could possibly lure us away from our beloved Python and into the uncharted territory of Rust?
+`Rust`, on the other hand, is a systems programming language that's been gaining traction in recent years. It's a powerhouse of a language that's designed to build fast, reliable, and portable software. With its modern architecture and sleek syntax, Rust is perfect for crafting command-line tools, systems software, and other high-performance applications. But for those of us who dwell in the realms of machine learning and data pipelines, Rust may seem like a distant cousin - intriguing, yet unfamiliar. So, the question remains: what could possibly lure us away from our beloved Python and into the uncharted territory of Rust?
 
 
 ## Why #RewriteInRust Took Off?
 
 So, what's the real story behind the surge in rewriting projects in Rust? Let's skip the usual buzzwords like memory safety, performance, and thread safety—we've all heard those before. One of the biggest reasons Rust rewrites have become so popular is the incredible community backing it. Rust has attracted a wealth of smart people, companies, and resources, creating a highly productive environment where new projects are constantly emerging.
 Another reason Rust rewrites are a smart choice is the impressive return on investment (ROI). Developing in Rust is a breeze, thanks to its fantastic toolchain, which includes Cargo, rustfmt, and Clippy. Plus, the welcoming community makes it easy for beginners to dive in and start building without the headache of dealing with complicated tools like Make, CMake, Ninja, or Maven.
-But here's the real game-changer: Rust's interoperability with other languages is incredibly smooth. Once you have a Rust core up and running, exposing it to Python via PyO3 is practically almost effortless. When choosing a new language, it’s all about what you can achieve with it. The beauty of Rust lies in its seamless integration with various languages, making it the perfect foundation for building a common Rust runtime that can support any language SDK.
+But here's the real game-changer: Rust's interoperability with other languages is incredibly smooth. Once you have a Rust core up and running, exposing it to Python via `PyO3` is practically almost effortless. When choosing a new language, it’s all about what you can achieve with it. The beauty of Rust lies in its seamless integration with various languages, making it the perfect foundation for building a common Rust runtime that can support any language SDK.
 
 
 ## Glossary
 
 Heads up! Before we dive right in, let's make sure we're all on the same page. There might be some words you're not familiar with, so let's clear those up first. Or you can check them later.
-Flyteidl is the protobuf message definition which Flyte has.
-gRPC can utilize Protocol Buffers as both the Interface Definition Language (IDL) and the underlying message exchange format on both ends.
-PyO3 is an actively maintained Rust crate for binding Python, facilitating the creation of native Python extension modules from Rust.
-Tonic is a gRPC client & server implementation in Rust with async/await support. It consists of a generic gRPC implementation, a high-performance HTTP/2 implementation, and a codegen tool powered by Prost.
+
+ - `FlyteIDL` is the protobuf message definition which Flyte has.
+
+ - `gRPC` can utilize Protocol Buffers as both the Interface Definition Language (IDL) and the underlying message exchange format on both ends.
+
+ - `PyO3` is an actively maintained Rust crate for binding Python, facilitating the creation of native Python extension modules from Rust.
+
+ - `Tonic` is a gRPC client & server implementation in Rust with async/await support. It consists of a generic gRPC implementation, a high-performance HTTP/2 implementation, and a codegen tool powered by Prost.
 
 To sum up, our goal is to remove dependency on gRPC in Python and solely replace it with Rust. So we use Rust structs generated from the protobuf compiler, and directly create a python binding for these structs then exposing them to Flytekit used by the underlying remote client. So we need to propose a way that generalizes the process of building a python package from a protobuf-defined rust crate.
 
 
-What’s PyO3 capable of?
+## What’s PyO3 capable of?
+
 [TODO] Some demo code with PyO3
 
 ## Compile Well-Known Types and Avoiding Orphan Rules
