@@ -13,10 +13,6 @@ title = "My Friends' Blogs"
   url = "https://blog.douenergy.com/what-is-the-postgres-sql-game-plan-i/"
 
   [[entries.entries]]
-  title = "貢獻開源並不難：我透過「源來適你」社群成為 Flyte 核心貢獻者！ (Chinese)"
-  url = "https://chishengliu.com/zh-tw/posts/become-flyte-committer/"
-
-  [[entries.entries]]
   title = "2024 Apache CommunityOverCode 亞洲場遊記 (Chinese)"
   url = "https://chishengliu.com/zh-tw/posts/apache-communityovercode-asia-2024-coauthored/"
 
