@@ -21,7 +21,7 @@
 }
 
 @mixin dark-appearance {
-  @include theme(#212121, #888888, #eeeeee, #0071bc, #a359e9);
+  @include theme(#212121, #a6a6a6, #eeeeee, #0071bc, #a359e9);
 }
 
 @mixin light-appearance {
@@ -128,3 +128,21 @@ figcaption {
   text-align: center;
   opacity: 0.5;
 }
+
+/* Muted Palette for Code Blocks*/
+
+/* Reduce contrast for strings (green) */
+code .s, pre .s {
+  color: #88b890; /* muted green */
+}
+
+/* Reduce contrast for keywords (red) */
+code .k, pre .k {
+  color: #cc6666; /* softened red */
+}
+
+/* Optional: soften number, types, comments, etc. */
+code .n, pre .n { color: #cccccc; }
+code .c, pre .c { color: #999999; font-style: italic; }
+code .kt, pre .kt { color: #cfa8ff; }   /* types */
+code .nf, pre .nf { color: #f0c674; }   /* function names */
