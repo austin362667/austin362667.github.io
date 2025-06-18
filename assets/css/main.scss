@@ -130,19 +130,25 @@ figcaption {
 }
 
 /* Muted Palette for Code Blocks*/
+/* 🎨 Muted but Colorful Palette */
 
-/* Reduce contrast for strings (green) */
-code .s, pre .s {
-  color: #88b890; /* muted green */
-}
-
-/* Reduce contrast for keywords (red) */
-code .k, pre .k {
-  color: #cc6666; /* softened red */
-}
-
-/* Optional: soften number, types, comments, etc. */
-code .n, pre .n { color: #cccccc; }
-code .c, pre .c { color: #999999; font-style: italic; }
+code .k, pre .k { color: #e27d60; }     /* keywords (if, for, def) */
+code .s, pre .s { color: #8dc891; }     /* strings */
+code .n, pre .n { color: #dcdcdc; }     /* names (variables) */
+code .m, pre .m { color: #e6b450; }     /* numbers */
+code .c, pre .c { color: #999999; font-style: italic; }  /* comments */
 code .kt, pre .kt { color: #cfa8ff; }   /* types */
-code .nf, pre .nf { color: #f0c674; }   /* function names */
+code .nf, pre .nf { color: #fabd2f; }   /* function names */
+code .o, pre .o { color: #f99157; }     /* operators (+, -, =) */
+code .p, pre .p { color: #cccccc; }     /* punctuation */
+code .bp, pre .bp { color: #66cccc; }  /* builtins (print, exit) */
+code .nb, pre .nb { color: #66cccc; }  /* builtins fallback */
+code .nv, pre .nv { color: #d19a66; }  /* variable names in assignments */
+
+pre, pre code {
+  background-color: #1e1e1e;
+  color: #ccc;               /* fallback */
+  font-family: "JetBrains Mono", monospace;
+  border-radius: 6px;
+  padding: 1em;
+}
