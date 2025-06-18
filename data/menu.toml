@@ -6,30 +6,7 @@ title = "Li-Hsing Liu / Austin"
   url = "https://github.com/austin362667"
 
 [[entries]]
-title = "Friends' Blogs"
-
-  [[entries.entries]]
-  title = "What is the Postgres' SQL GAME plan (I)? (Chinese)"
-  url = "https://blog.douenergy.com/what-is-the-postgres-sql-game-plan-i/"
-
-  [[entries.entries]]
-  title = "2024 Apache CommunityOverCode Asia Tour (Chinese)"
-  url = "https://chishengliu.com/zh-tw/posts/apache-communityovercode-asia-2024-coauthored/"
-
-[[entries]]
-title = "Good Reads"
-
-  [[entries.entries]]
-  title = "Hacker's guide to Neural Networks (English)"
-  url = "https://karpathy.github.io/neuralnets/"
-
-  [[entries.entries]]
-  title = "What happens when you type a SQL in the database (English)"
-  url = "https://blog.haoxp.xyz/posts/sql-to-results/"
-
-
-[[entries]]
-title = "My Posts"
+title = "Posts"
   [entries.post_list]
   limit = 5
   show_more = true
