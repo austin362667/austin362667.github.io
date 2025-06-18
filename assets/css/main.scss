@@ -145,10 +145,3 @@ code .bp, pre .bp { color: #66cccc; }  /* builtins (print, exit) */
 code .nb, pre .nb { color: #66cccc; }  /* builtins fallback */
 code .nv, pre .nv { color: #d19a66; }  /* variable names in assignments */
 
-pre, pre code {
-  background-color: #1e1e1e;
-  color: #ccc;               /* fallback */
-  font-family: "JetBrains Mono", monospace;
-  border-radius: 6px;
-  padding: 1em;
-}
