@@ -6,6 +6,8 @@ draft: false
 
 > #100-days-of-gpu-challenge #gpu-programming
 
+![The GPUUUU Monster](./monster.jpeg")
+
 # Day 1: Your GPU is a Monster. Don't Let It Starve.
 
 Welcome to Day 1 of the GPU Challenge! Let's talk about how to tame the beast.
