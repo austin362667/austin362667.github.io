@@ -6,7 +6,7 @@ draft: false
 
 > #100-days-of-gpu-challenge #gpu-programming
 
-![The GPUUUU Monster]("../../../../assets/monster.jpeg")
+![The GPUUUU Monster](/assets/monster.png)
 
 # Day 1: Your GPU is a Monster. Don't Let It Starve.
 
