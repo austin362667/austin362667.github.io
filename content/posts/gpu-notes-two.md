@@ -40,6 +40,8 @@ The kernel layer uses three main optimization strategies:
 | **Data Movement Efficiency** | Optimize memory access patterns | Swizzling, coalescing, overlapping compute with memory |
 | **Special Instructions** | Leverage hardware accelerators | TensorCore MMA, Hopper TMA, vectorized operations |
 
+---
+
 **2. The Graph Layer: Model Optimization**
 
 This is the main floor—where we view the model as a computational graph. Instead of optimizing individual kernels, the focus is on streamlining the entire sequence of operations. Think of it as optimizing the recipe, not just the individual cooking techniques.
@@ -65,8 +67,11 @@ The graph layer employs several key optimization strategies:
 | **Sparsity** | Skip zero computations (static/dynamic) | Reduces computation for sparse models |
 | **JIT Compilation** | Convert dynamic graphs to optimized static graphs | Eliminates Python overhead, enables optimizations |
 
+---
 
-> **Personal Thoughts:** In theory, a “smart-enough” compiler could use hardware specs and algorithmic needs to auto‑generate high‑performance kernels, letting users work purely at the graph level. But no such compiler exists today, so researchers and engineers must continue hand‑tuning kernels—for the foreseeable future. I highly recommend **[Chris Lattner](https://www.nondot.org/sabre/)**’s blog series **[Democratizing AI Compute](https://www.modular.com/blog/democratizing-compute-part-1-deepseeks-impact-on-ai)** at [Modular](https://www.modular.com/mojo). Besides, cutting training and inference costs remains vital: GPU FLOPS keep outpacing HBM bandwidth growth, so manual effort to turn memory‑bound tasks into compute‑bound ones is still essential. Just a late-night thought I had—happy to hear any feedback or continue the discussion! Feel free to reach out.
+```text
+**Personal Thoughts:** In theory, a “smart-enough” compiler could use hardware specs and algorithmic needs to auto‑generate high‑performance kernels, letting users work purely at the graph level. But no such compiler exists today, so researchers and engineers must continue hand‑tuning kernels—for the foreseeable future. I highly recommend **[Chris Lattner](https://www.nondot.org/sabre/)**’s blog series **[Democratizing AI Compute](https://www.modular.com/blog/democratizing-compute-part-1-deepseeks-impact-on-ai)** at [Modular](https://www.modular.com/mojo). Besides, cutting training and inference costs remains vital: GPU FLOPS keep outpacing HBM bandwidth growth, so manual effort to turn memory‑bound tasks into compute‑bound ones is still essential. Just a late-night thought I had—happy to hear any feedback or continue the discussion! Feel free to reach out.
+```
 
 ---
 
