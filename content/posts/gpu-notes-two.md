@@ -17,12 +17,13 @@ Think of an LLM system as a three-story building. Each floor has a different pur
 ### The Three Layers of an LLM System
 
 An LLM system can be broken into three layers, each addressing a distinct challenge in running large models at scale.
-
+```
 | Layer | Operations | Key Focus | Representative Tools |
 |-------|------------|-----------|---------------------|
 | **Kernel** | Scalar/Vector/Tile instructions | Micro-architecture optimization | CUDA C/C++, Triton, PTX, CUTLASS, Mojo |
 | **Graph** | Tensor primitives | Model graph optimization | PyTorch, TensorRT, ONNX, JAX, TinyGrad |
 | **System** | Sharding, Batching, Orchestration | Multi-GPU coordination | SGLang, vLLM, TensorRT-LLM, DeepSpeed, Megatron-LM |
+```
 
 **1. The Kernel Layer: Raw GPU Execution**
 
@@ -33,12 +34,13 @@ This is the basement—where code meets silicon. A kernel is the smallest unit o
 ### Kernel Layer Optimization Techniques
 
 The kernel layer uses three main optimization strategies:
-
+```
 | Technique | Description | Examples |
 |-----------|-------------|----------|
 | **Data Locality** | Keep data close to compute units | Use registers, shared memory (including tiling), L1/L2 cache |
 | **Data Movement Efficiency** | Optimize memory access patterns | Swizzling, coalescing, overlapping compute with memory |
 | **Special Instructions** | Leverage hardware accelerators | TensorCore MMA, Hopper TMA, vectorized operations |
+```
 
 ---
 
@@ -58,7 +60,7 @@ This is the main floor—where we view the model as a computational graph. Inste
 ### Graph Layer Optimization Techniques
 
 The graph layer employs several key optimization strategies:
-
+```
 | Technique | Description | Impact |
 |-----------|-------------|---------|
 | **Operator Fusion** | Combine multiple operations into single kernels | Reduces memory I/O, eliminates intermediate writes |
@@ -66,6 +68,7 @@ The graph layer employs several key optimization strategies:
 | **Quantization** | Use lower precision (FP16, INT8, FP4) | Increases throughput, reduces memory |
 | **Sparsity** | Skip zero computations (static/dynamic) | Reduces computation for sparse models |
 | **JIT Compilation** | Convert dynamic graphs to optimized static graphs | Eliminates Python overhead, enables optimizations |
+```
 
 ---
 
@@ -95,6 +98,7 @@ This is the penthouse—where we coordinate entire clusters of GPUs. Massive mod
 
 The system layer coordinates multiple GPUs using various parallelism techniques:
 
+```
 | Parallelism Type | How It Works | Latency Impact | Memory Impact | Communication Cost |
 |------------------|--------------|----------------|---------------|--------------------|
 | **Data Parallel** | Same model, different batches | ❌ No improvement | ❌ Full model per GPU | ✅ Low (inference) |
@@ -102,16 +106,19 @@ The system layer coordinates multiple GPUs using various parallelism techniques:
 | **Tensor Parallel** | Split weight matrices across GPUs | ✅ Improves latency | ✅ Saves memory | ❌ High |
 | **Expert Parallel** | Distribute MoE experts across GPUs | ✅ Improves latency (large batch) | ✅ Saves memory | 🔶 Medium |
 | **Sequence Parallel** | Split along sequence dimension | ✅ Improves latency (long context) | ✅ Saves memory | ❌ High |
+```
 
 ### System Performance Metrics
 
 Different layers optimize for different metrics:
 
+```
 | Layer | Primary Metrics | Secondary Metrics |
 |-------|----------------|-------------------|
 | **Kernel** | FLOPS, Memory Bandwidth Utilization | Latency per operation |
 | **Graph** | Model FLOPS Utilization (MFU) | Memory efficiency, Compilation time |
 | **System** | Tokens Per Second (TPS), Time To First Token (TTFT) | Time Per Output Token (TPOT) |
+```
 
 ### LLM System Architecture Overview
 
@@ -153,7 +160,7 @@ Our challenge starts in the kernel layer, where we'll learn to write high-perfor
 ### Optimization Trade-offs Across Layers
 
 Understanding the trade-offs helps identify where to focus optimization efforts:
-
+```
 | Constraint | Kernel Layer | Graph Layer | System Layer |
 |------------|--------------|-------------|--------------|
 | **Compute Bound** | Optimize arithmetic intensity | Use quantization, sparsity | Choose compute-optimal parallelism |
@@ -161,17 +168,19 @@ Understanding the trade-offs helps identify where to focus optimization efforts:
 | **Communication Bound** | N/A (single GPU) | Minimize intermediate tensors | Optimize parallelism strategy |
 | **Latency Critical** | Reduce kernel launch overhead | JIT compilation, CUDA graphs | Tensor parallelism, speculative decoding |
 | **Throughput Critical** | Maximize occupancy | Batch operations | Data parallelism, continuous batching |
+```
 
 ### Common Bottleneck Patterns
 
 Recognizing these patterns helps diagnose performance issues:
-
+```
 | Symptom | Likely Layer | Common Causes | Solutions |
 |---------|--------------|---------------|-----------|
 | Low GPU utilization (<50%) | Kernel | Poor memory access, low arithmetic intensity | Optimize memory patterns, use tensor cores |
 | High GPU util, slow overall | Graph | Inefficient operators, poor fusion | Operator fusion, quantization |
 | Good single GPU, poor scaling | System | Communication overhead, load imbalance | Better parallelism strategy, batching |
 | High latency, good throughput | System | Poor request scheduling | Continuous batching, speculative decoding |
+```
 
 ### Quiz: Where Does the Bottleneck Live?
 
@@ -202,7 +211,7 @@ This is why frameworks like vLLM focus heavily on system-level optimizations lik
 ### Advanced Concepts: Cross-Layer Optimizations
 
 Some cutting-edge techniques span multiple layers:
-
+```
 | Technique | Layers Involved | Description |
 |-----------|-----------------|-------------|
 | **Speculative Decoding** | Graph + System | Use small model to predict, verify with large model |
@@ -211,7 +220,7 @@ Some cutting-edge techniques span multiple layers:
 | **Dataflow Architectures** | All layers | Execute operations when data becomes available |
 | **[Prefill-Decode Disaggregation](https://arxiv.org/pdf/2401.09670)** | System | Separates prefill and decode phases onto different hardware for optimized latency and resource allocation |
 | **[Flash Attention](https://arxiv.org/pdf/2205.14135)** | Kernel | Optimized attention mechanism with reduced memory bandwidth and improved efficiency for long sequences |
-
+```
 
 
 ### What's Next
